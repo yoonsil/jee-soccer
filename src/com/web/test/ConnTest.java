@@ -13,7 +13,6 @@ public class ConnTest {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			conn = DriverManager.getConnection(Constants.ORACLE_URL,
