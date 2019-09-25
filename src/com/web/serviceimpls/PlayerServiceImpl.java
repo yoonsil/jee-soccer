@@ -10,12 +10,12 @@ import com.web.services.PlayerService;
 public class PlayerServiceImpl implements PlayerService{
 	//singleton
 	private static PlayerServiceImpl instance = new PlayerServiceImpl();
-	
 	public static PlayerServiceImpl getInstance() {
 		return instance;
 	}
 	private PlayerServiceImpl() {}
-	//-------------------------------------
+	
+	
 	public List<String> findPositions() {
 		return PlayerDaoImpl.getInstance().selectPositions();
 	}

@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.web.command.Command;
+import com.web.command.Commander;
+import com.web.command.Receiver;
+import com.web.command.Sender;
 import com.web.domains.PlayerBean;
 import com.web.pool.Constants;
 import com.web.serviceimpls.PlayerServiceImpl;
@@ -19,8 +23,11 @@ public class PlayerController extends HttpServlet {
 	protected void service
 	(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		
 		PlayerBean player = null;
+		
+		Receiver receiver = new Receiver();
+		Commander commander = new Commander();
+		Sender sender = new Sender();
 		
 		switch(request.getParameter("action")) {
 		case "move":

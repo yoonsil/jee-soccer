@@ -1,5 +1,11 @@
 package com.web.command;
 
-public class Receiver {
-	
+import javax.servlet.http.HttpServletRequest;
+
+
+public class Receiver{
+	public static Command cmd = new Command();
+	public void init(HttpServletRequest reuqest) {
+		cmd = Commander.direct(reuqest);
+	}
 }
