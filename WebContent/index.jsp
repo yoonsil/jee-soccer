@@ -1,47 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Soccer</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-</script>
-</head>
-<body>
-	<h2><a id ="a_position" href="#">2. 포지션보기</a></h2>
-
-	<!-- 4. 팀아이디로 해당팀의 포지션별 선수 검색기능 예) 수원팀(id:k02), 골키퍼 -->
-	<h2>4. 팀 아이디와 포지션 입력하면 해당 선수정보 출력</h2>
-	<form id = "btn4" action="<%=request.getContextPath()%>/player.do" >
-	ID: <input type="text" name ="teamId" /><br/>
-	POSITION: <input type="text" name ="position" /><br/>
-	<input type="hidden" name ="action" value = "find4"/>
-	<input type="hidden" name = "page" value = "4.find_by_teamid_position"/>
-	<input type="submit" value ="찾기" />
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>LOGIN</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+	<div id ="wrapper" style="width:100%; height:100%">
+	<form id ="login_form" action="<%=request.getContextPath()%>/player.do">
+		<table border = "1" style="width:300px;height:180px; margin:100px auto">
+			<tr>
+				<td style="width:300px">
+				USER ID<input type="text" name ="playerId" />
+				</td>
+				<td rowspan ="2">
+				<input type="hidden" name ="action" value="move" />
+				<input type="hidden" name ="page" value ="home" />
+				<input type="submit" value="LOGIN" style="width:100%; height:100%" />
+				</td>
+			</tr>
+			<tr>
+				<td>PASSWORD<input type="text" name ="solar"/></td>
+			</tr>
+		</table>
 	</form>
-
-	<h2>5. 팀 아이디와 포지션 입력하면 해당 선수정보 출력</h2>
-	<form id = "btn5" action="<%=request.getContextPath()%>/player.do">
-	팀id <input type="text" name = "teamId"/><br/>
-	선수이름 <input type="text" name ="playerName"/><br/>
-	키 <input type="text" name ="height"/><br/>
-	<input type="hidden" name ="action" value = "find5"/>
-	<input type="hidden" name = "page" value = "5.fund_by_teamid_height_name"/>
-	<input type="submit" value = "검색"/>
-	</form>
-
-</body>
-<script>
-$('#a_position').click(function(){
-	location.assign('<%=request.getContextPath()%>/player.do?action=find2&page=2_positions');
-});
-
-$('#btn4').submit(function(){
-});
-
-$('#btn5').submit(function(){
-});
-
-</script>
-</html>
+		<h3 style="width:300px; margin:0 auto">
+		<a id="a_join" href="#">회원가입</a>
+		</h3>
+	</div>
+	</body>
+	<script>
+	$('#a_join').click(function(){
+	});
+	
+	$('#login_form').submit(function(){
+	});
+	</script>
+	
+	</html>

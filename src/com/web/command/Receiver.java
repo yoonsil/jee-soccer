@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class Receiver{
 	public static Command cmd = new Command();
-	public void init(HttpServletRequest reuqest) {
-		cmd = Commander.direct(reuqest);
+	public static void init(HttpServletRequest request) {
+		cmd = Commander.direct(request);
 	}
 }

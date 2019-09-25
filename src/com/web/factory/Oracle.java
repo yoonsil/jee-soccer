@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.web.enums.DBDriver;
+import com.web.enums.URL;
 import com.web.pool.Constants;
 
 public class Oracle implements Database{
@@ -12,9 +14,9 @@ public class Oracle implements Database{
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
-			Class.forName(Constants.ORACLE_DRIVER);
+			Class.forName(DBDriver.ORACLE_DRIVER.toString());
 			conn = DriverManager.getConnection(
-					Constants.ORACLE_URL,
+					URL.ORACLE_URL.toString(),
 					Constants.USERNAME,
 					Constants.PASSWORD);
 		} catch (Exception e) {

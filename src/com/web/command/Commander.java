@@ -2,12 +2,14 @@ package com.web.command;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.web.enums.Action;
+
 public class Commander{
 	public static Command direct(HttpServletRequest request) {
 		Command cm = null;
-		switch(request.getParameter("action")) {
-		case "move": cm = new MoveCommand();  break;
-		case "search": cm = new SearchCommand(); break;
+		switch(Action.valueOf(request.getParameter("action").toUpperCase())) {
+		case MOVE: cm = new MoveCommand(request); break;
+		case SEARCH: cm = new SearchCommand(); break;
 		}
 	return cm;
 	}

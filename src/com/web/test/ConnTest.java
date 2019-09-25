@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.web.enums.DBDriver;
+import com.web.enums.URL;
 import com.web.pool.Constants;
 
 public class ConnTest {
@@ -14,8 +17,8 @@ public class ConnTest {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			Class.forName("oracle.jdbc.OracleDriver");
-			conn = DriverManager.getConnection(Constants.ORACLE_URL,
+			Class.forName(DBDriver.ORACLE_DRIVER.toString());
+			conn = DriverManager.getConnection(URL.ORACLE_URL.toString(),
 					Constants.USERNAME, Constants.PASSWORD);
 		}catch(Exception e) {
 			e.printStackTrace();}
