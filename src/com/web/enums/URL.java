@@ -13,6 +13,7 @@ public enum URL {
 		switch (this) {
 		case ORACLE_URL:
 			url="jdbc:oracle:thin:@localhost:1521:XE";
+			System.out.println("----------oracle url");
 			break;
 		case MARIADB_URL:
 			url="jdbc:mysql://localhost:3306";
@@ -30,6 +31,6 @@ public enum URL {
 		default:
 			break;
 		}
-		return super.toString();
+		return url;
 	}
 }

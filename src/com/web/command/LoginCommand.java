@@ -2,10 +2,17 @@ package com.web.command;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.web.domains.PlayerBean;
 import com.web.serviceimpls.PlayerServiceImpl;
 
 public class LoginCommand extends Command{
-	public LoginCommand() {
+	public LoginCommand(HttpServletRequest request) {
+		System.out.println("5.LoginCommand 들어옴");
+		System.out.println(String.format("request 값 출력 : %s, %s, %s, %s ",
+				request.getParameter("playerId"), 
+				request.getParameter("solar"),
+				request.getParameter("action"),
+				request.getParameter("page")));
 		setRequest(request);
 		setDomain(request.getServletPath()
 				.substring(1,request.getServletPath().indexOf(".")));
@@ -15,10 +22,19 @@ public class LoginCommand extends Command{
 	}
 	@Override
 	public void execute() {
-		if (PlayerServiceImpl.getInstance().login(null)) {
+		String playerId = request.getParameter("playerId");
+		String solar = request.getParameter("solar");
+		PlayerBean player = new PlayerBean();
+		player.setPlayerId(playerId);
+		player.setSolar(solar);
+		player= PlayerServiceImpl
+				.getInstance()
+				.login(player);
+		System.out.println("10.디비에서 커맨드로 전달된 로그인 객체");
+		if (!player.getPlayerId().equals("")) {
 			setPage(request.getParameter("page"));
 		}else {
-			setPage("index.jsp");
+			setPage("fail");
 		}
 		super.execute();
 	}

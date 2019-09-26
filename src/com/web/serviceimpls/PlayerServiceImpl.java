@@ -11,14 +11,16 @@ public class PlayerServiceImpl implements PlayerService{
 	//singleton
 	private static PlayerServiceImpl instance = new PlayerServiceImpl();
 	public static PlayerServiceImpl getInstance() {return instance;}
-	
-	public boolean login(PlayerBean param) {
-		return false;
-	}
-	
 	private PlayerServiceImpl() {}
 	
-	
+	public PlayerBean login(PlayerBean param) {
+		System.out.println("6.playerServiceImpl의 login()으로 이동");
+		System.out.println(String.format("param값 출력:%s, %s", 
+				param.getPlayerId(),
+				param.getSolar()));
+		return PlayerDaoImpl.getInstance().selectByplayerIdSolar(param);
+	}
+		
 	public List<String> findPositions() {
 		return PlayerDaoImpl.getInstance().selectPositions();
 	}
