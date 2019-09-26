@@ -16,7 +16,7 @@
 				USER ID<input type="text" name ="playerId" />
 				</td>
 				<td rowspan ="2">
-				<input type="hidden" name ="action" value="move" />
+				<input type="hidden" name ="action" value="login" />
 				<input type="hidden" name ="page" value ="home" />
 				<input type="submit" value="LOGIN" style="width:100%; height:100%" />
 				</td>

@@ -10,9 +10,12 @@ import com.web.services.PlayerService;
 public class PlayerServiceImpl implements PlayerService{
 	//singleton
 	private static PlayerServiceImpl instance = new PlayerServiceImpl();
-	public static PlayerServiceImpl getInstance() {
-		return instance;
+	public static PlayerServiceImpl getInstance() {return instance;}
+	
+	public boolean login(PlayerBean param) {
+		return false;
 	}
+	
 	private PlayerServiceImpl() {}
 	
 	

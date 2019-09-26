@@ -5,6 +5,8 @@ import java.util.List;
 import com.web.domains.PlayerBean;
 
 public interface PlayerService {
+	//1.login
+	public boolean login(PlayerBean param);
 	//2. 포지션 종류
 	public List<String> findPositions();
 	//4. 수원팀 (id:k02) 골키퍼

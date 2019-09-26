@@ -9,7 +9,7 @@ public class Commander{
 		Command cm = null;
 		switch(Action.valueOf(request.getParameter("action").toUpperCase())) {
 		case MOVE: cm = new MoveCommand(request); break;
-		case SEARCH: cm = new SearchCommand(); break;
+		case SEARCH: cm = new SearchCommand(request); break;
 		}
 	return cm;
 	}

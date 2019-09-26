@@ -11,7 +11,7 @@ public class Command implements Order{
 	protected String action, domain, page, view;
 	protected HttpServletRequest request;
 	public void execute() {
-		this.view = String.format(Constants.VEIW_PATH, page);
+		this.view = String.format(Constants.SINGLE_PATH, page);
 	}
 
 }
