@@ -25,10 +25,11 @@ public class Sender{
 	public static void redirect(HttpServletRequest request,
 			HttpServletResponse response) {
 		try {
-			response.sendRedirect("");
+			response
+			.sendRedirect("");
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
+		
 	}
-	
 }

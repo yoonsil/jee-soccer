@@ -17,6 +17,7 @@ public class Commander{
 		case MOVE: cm = new MoveCommand(request); break;
 		case SEARCH: cm = new SearchCommand(request); break;
 		case LOGIN: cm = new LoginCommand(request); break;
+		default: break;
 		}
 	return cm;
 	}

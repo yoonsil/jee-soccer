@@ -11,13 +11,12 @@ public class Command implements Order{
 	protected String action, domain, page, view;
 	protected HttpServletRequest request;
 	public void execute() {
-		System.out.println("4. Command 들어옴 ");
-		System.out.println(String.format("request 값 출력 : %s, %s, %s, %s ",
-				request.getParameter("playerId"), 
+		System.out.println("★★★  4. Command 들어옴 ★★★");
+		System.out.println(String.format("request 값 출력: %s, %s, %s, %s",
+				request.getParameter("playerId"),
 				request.getParameter("solar"),
 				request.getParameter("action"),
 				request.getParameter("page")));
-		this.view = String.format(Constants.SINGLE_PATH, page);
+		this.view = String.format(Constants.DOUBLE_PATH,"facade",page);
 	}
-
 }

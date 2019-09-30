@@ -12,7 +12,6 @@ public class Receiver{
 				request.getParameter("solar"),
 				request.getParameter("action"),
 				request.getParameter("page")));
-		cmd = Commander.
-				direct(request);
+		cmd = Commander.direct(request);
 	}
 }
