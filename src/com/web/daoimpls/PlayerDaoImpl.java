@@ -73,31 +73,36 @@ public class PlayerDaoImpl implements PlayerDao{
 		}
 		return positions;
 	}
-	//-----------------------------------------
-	public List<PlayerBean> selectByteamId(PlayerBean param) {
-
-		return null;
-	}
-	//-----------------------------------------
-	public List<PlayerBean> selectByheightName(PlayerBean param) {
-		
-		return null;
-	}
 	@Override
 	public List<PlayerBean> selectByMany(PlayerBean param) {
-		List<PlayerBean> player = new ArrayList<>();
-		String sql = "";
+		List<PlayerBean> list = new ArrayList<>();
+		String sql = "-";
 		try {
-			PreparedStatement stmt = DatabaseFactory
+			PreparedStatement pstmt = DatabaseFactory
 					.createDatabase(Constants.VENDOR)
 					.getConnection()
 					.prepareStatement(sql);
-			stmt.setString(1, param.getBackNo());
-			stmt.setString(2, param.getBirthDate());
+			pstmt.setString(1, param.getBackNo());
+			pstmt.setString(2, param.getBirthDate());
+			pstmt.setString(3, param.getHeight());
+			pstmt.setString(4, param.getJoinYyyy());
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return player;
+		return list;
 	}
-	
+	@Override
+	public List<PlayerBean> selectByTeamIdPosition(PlayerBean param) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<PlayerBean> selectByheightName(PlayerBean param) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -10,8 +10,8 @@ public interface PlayerService {
 	//2. 포지션 종류
 	public List<String> findPositions();
 	//4. 수원팀 (id:k02) 골키퍼
-	public List<PlayerBean> searchByteamId(PlayerBean param);
+	public List<PlayerBean> findByTeamIdPosition(PlayerBean param);
 	//5. 팀 id, 키, 플레이어네임
-	public List<PlayerBean> searchByheightName(PlayerBean param);
+	public List<PlayerBean> findByTeamIdHeightName(PlayerBean param);
 	
 }

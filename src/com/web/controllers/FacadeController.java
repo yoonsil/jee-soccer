@@ -1,17 +1,11 @@
 package com.web.controllers;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import com.web.command.Receiver;
-import com.web.command.Sender;
 import com.web.pool.Constants;
 @WebServlet("/facade.do")
 public class FacadeController extends HttpServlet {
@@ -27,8 +21,7 @@ public class FacadeController extends HttpServlet {
 						? ""
 							: "/resources/"+r.toString().toLowerCase()));
 		}
-		request
-		.getRequestDispatcher(
+		request.getRequestDispatcher(
 				String.format(Constants.DOUBLE_PATH,
 						request.getServletPath().substring(1,request.getServletPath().indexOf(".")),
 						"login"))

@@ -37,4 +37,4 @@
 <jsp:include page="../common/foot.jsp"/>
 <script>
 app.init('${ctx}');
-</script>	
+</script>
