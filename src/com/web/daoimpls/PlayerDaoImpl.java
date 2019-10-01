@@ -17,7 +17,6 @@ public class PlayerDaoImpl implements PlayerDao{
 	private static PlayerDaoImpl instance = new PlayerDaoImpl();
 	public static PlayerDaoImpl getInstance() {return instance;}
 	private PlayerDaoImpl() {}
-	//-----------------------------------------
 	public PlayerBean selectByplayerIdSolar(PlayerBean param) {
 		PlayerBean player = null;
 		String sql = "SELECT * FROM PLAYER \n"
@@ -51,7 +50,6 @@ public class PlayerDaoImpl implements PlayerDao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("반환된 결과값"+player.toString());
 		return player;
 	}
 	
@@ -97,12 +95,10 @@ public class PlayerDaoImpl implements PlayerDao{
 	}
 	@Override
 	public List<PlayerBean> selectByTeamIdPosition(PlayerBean param) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
 	public List<PlayerBean> selectByheightName(PlayerBean param) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
