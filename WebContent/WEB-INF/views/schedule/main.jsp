@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>position</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-</script>
+<title>Insert title here</title>
 </head>
 <body>
-	포지션은  ${positions}입니다.
+
 </body>
 </html>

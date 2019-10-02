@@ -5,6 +5,8 @@ import java.util.List;
 import com.web.domains.PlayerBean;
 
 public interface PlayerDao {
+	//0.join
+	public boolean insertPlayer(PlayerBean param);
 	//1.login
 	public PlayerBean selectByplayerIdSolar(PlayerBean param);
 	//2.position
@@ -15,4 +17,5 @@ public interface PlayerDao {
 	public List<PlayerBean> selectByheightName(PlayerBean param);
 	//테스트
 	public List<PlayerBean> selectByMany(PlayerBean param);
+	
 }

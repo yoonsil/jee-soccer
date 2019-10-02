@@ -37,6 +37,10 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerBean> findByTeamIdHeightName(PlayerBean param) {
 		return null;
 	}
+	@Override
+	public boolean join(PlayerBean param) {
+		return PlayerDaoImpl.getInstance().insertPlayer(param);
+	}
 	
 
 }

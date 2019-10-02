@@ -13,5 +13,6 @@ public interface PlayerService {
 	public List<PlayerBean> findByTeamIdPosition(PlayerBean param);
 	//5. 팀 id, 키, 플레이어네임
 	public List<PlayerBean> findByTeamIdHeightName(PlayerBean param);
-	
+	//6
+	public boolean join(PlayerBean param);
 }
